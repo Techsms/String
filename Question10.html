@@ -1,0 +1,28 @@
+<script>
+    function isPalindrome(str) {
+  let filteredStr = "";
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+    if ((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9')) {
+      filteredStr += char;
+    }
+  }
+
+  let left = 0;
+  let right = filteredStr.length - 1;
+  while (left < right) {
+    if (filteredStr[left] !== filteredStr[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+
+  return true;
+}
+
+// Test cases
+console.log(isPalindrome("A man, a plan, a canal, Panama!")); // Output: true
+console.log(isPalindrome("Hello, World!"));                   // Output: false
+
+</script>

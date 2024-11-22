@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countVowelsAndConsonants(str) {
+  let vowels = "aeiouAEIOU";
+  let vowelCount = 0;
+  let consonantCount = 0;
+  let isLetter = function (char) {
+    let code = char.charCodeAt(0);
+    return (code >= 65 && code <= 90) || (code >= 97 && code <= 122);
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (isLetter(char)) {
+      let isVowel = false;
+      for (let j = 0; j < vowels.length; j++) {
+        if (char === vowels[j]) {
+          isVowel = true;
+          break;
+        }
+      }
+      if (isVowel) {
+        vowelCount++;
+      } else {
+        consonantCount++;
+      }
+    }
+  }
+
+  return { vowels: vowelCount, consonants: consonantCount };
+}
+
+// Test case
+let result = countVowelsAndConsonants("Java Programming");
+console.log("Vowels: " + result.vowels + ", Consonants: " + result.consonants); // Output: Vowels: 5, Consonants: 9
+
+    </script>
+</body>
+</html>

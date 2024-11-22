@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse each word of string </title>
+</head>
+<body>
+    <script>
+        let a=" java is platform independent"
+        let result=" "
+        let word=" "
+        for(let ch of a){
+            if(ch !=" "){
+         word= ch + word
+          } else{
+            result=result+word 
+            word=" "
+          }
+        }
+        result= result+ word
+        console.log(result)
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occurrences of each letter</title>
+</head>
+<body>
+    <script>
+    function countOccurrences(str) {
+        let count = {};
+      
+        for (let i = 0; i < str.length; i++) {
+          let char = str[i];
+          if (count[char]) {
+            count[char]++;
+          } else {
+            count[char] = 1;
+          }
+        }
+      
+        // Printing the result
+        for (let char in count) {
+          console.log(char + "- " + count[char] + " times");
+        }
+      }
+      
+      // Test case
+      countOccurrences("aabbccddd");
+      // Output:
+      // a- 2 times
+      // b- 2 times
+      // c- 2 times
+      // d- 3 times
+    </script>  
+</body>
+</html>

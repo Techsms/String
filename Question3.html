@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maximum length of </title>
+</head>
+<body>
+    <script>
+            let a=" java is platform independent"
+            let int=0
+            let maxCountWord=0
+            let word=""
+            let result=""
+            for(let ch of a){
+                if(ch!=" "){
+                  int++
+                  word= word+ch
+                }
+                else{
+                if(int>maxCountWord){
+                    maxCountWord = int
+                    result=""
+                    result=word
+                }
+                 word=""
+                }
+            }
+        console.log(result)
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>findAllPalindromes</title>
+</head>
+<body>
+    <script>
+        function findAllPalindromes(str) {
+  let palindromes = [];
+
+  // Helper function to check if a substring is a palindrome
+  function isPalindrome(start, end) {
+    while (start < end) {
+      if (str[start] !== str[end]) {
+        return false;
+      }
+      start++;
+      end--;
+    }
+    return true;
+  }
+
+  // Iterate over all possible substrings
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i; j < str.length; j++) {
+      if (isPalindrome(i, j)) {
+        // Collect the palindrome substring
+        let palindrome = "";
+        for (let k = i; k <= j; k++) {
+          palindrome += str[k];
+        }
+        palindromes.push(palindrome);
+      }
+    }
+  }
+
+  return palindromes;
+}
+
+// Test case
+let palindromes = findAllPalindromes("aaabbbacccababacccaabb");
+console.log(palindromes);
+    
+    </script>
+</body>
+</html>
